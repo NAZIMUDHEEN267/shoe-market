@@ -1,0 +1,22 @@
+// ================= mixins ==============//
+
+@use './variables' as var;
+
+
+@mixin media-desktop {
+	@media (max-width: var.$desktop) {
+		@content;
+	}
+}
+
+@mixin  media-tablet {
+	@media (max-width: var.$tablet) {
+		@content;
+	}
+}
+
+@mixin media-mobile {
+	@media (max-width: var.$mobile){
+		@content;
+	}
+}

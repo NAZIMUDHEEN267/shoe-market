@@ -1,0 +1,6 @@
+ 
+ @use '../helpers/*helpers' as helper;
+
+ h1{
+	 color: helper.$blue;
+ }
