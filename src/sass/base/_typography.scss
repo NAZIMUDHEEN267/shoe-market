@@ -1,19 +1,38 @@
 
 //helper module 
 @use '../helpers/*helpers' as help;
+@use 'sass:math';
 
 // google fonts 
+	//kumbh font
+	@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
 
-//kumbh font
-@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
-
-//prompt font
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+	//prompt font
+	@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
 
+//desktop typography
 @include help.media-desktop{
+	.nav__name{
+		font-size: help.sum(1,.7);
+	}
+
 	p{
-		font-size: help.mul(2,8)px;
+		font-size: math.max(16,14) * 1px;
 	}
 }
+
+
+//tablet typography
+@include help.media-tablet{
+	.nav__name{
+		font-size: help.sum(1,.3);
+	}
+
+	p{
+		font-size: math.min(16,14) * 1px;
+	}
+}
+
+
 

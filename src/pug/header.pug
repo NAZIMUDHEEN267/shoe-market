@@ -1,10 +1,17 @@
 
 //header 
 header.header
-	//navigation bar
+
+	//nav
 	nav.nav
+
+		//nav-bar 
+		.nav__bar
+			i(class="fas fa-bars")
+
 		//links
 		.nav__links
+
 			h1.nav__name sneakers
 			//main nav links 
 			table
@@ -12,11 +19,16 @@ header.header
 					-const navLinks = ['collections','men','women','about'];
 						each item in navLinks 
 							th
-								a(href="#" class="links--grey")=  item
+								a(href="#" class="links--black")=  item
 		//right nav-links 
-		.user
-			.user__cart
+		.user.cart
+			.user__cart.user--black
 				a(href="#")
 					i.fas.fa-shopping-cart
+				span.user__count#js-count 1
+			.cart__detail 
+				span cart
+				.cart__items  
+				button.checkout__cta.checkout__cta--orange checkout
 			.user__photo 
 				img(src="/build/Assets/images/image-avatar.png", alt="user.jpg")

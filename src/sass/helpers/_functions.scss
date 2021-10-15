@@ -1,4 +1,6 @@
 
+@use 'sass:math';
+
 //multiplication
 @function mul($value, $mul){
 	@return ($value * $mul) * 1rem;
@@ -23,5 +25,5 @@
 }
 
 @function convert($value){
-	@return ( $value / 16 ) * 1rem;
+	@return  math.div(16, $value) * 1rem;
 }

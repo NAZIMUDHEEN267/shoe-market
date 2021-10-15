@@ -10,24 +10,30 @@
   <body> 
     <!--header -->
     <header class="header">
-      <!--navigation bar-->
+      <!--nav-->
       <nav class="nav">
+        <!--nav-bar -->
+        <div class="nav__bar"><i class="fas fa-bars"></i></div>
         <!--links-->
         <div class="nav__links">
           <h1 class="nav__name">sneakers</h1>
           <!--main nav links -->
           <table>
             <tr>
-              <th><a class="links--grey" href="#">collections</a></th>
-              <th><a class="links--grey" href="#">men</a></th>
-              <th><a class="links--grey" href="#">women</a></th>
-              <th><a class="links--grey" href="#">about</a></th>
+              <th><a class="links--black" href="#">collections</a></th>
+              <th><a class="links--black" href="#">men</a></th>
+              <th><a class="links--black" href="#">women</a></th>
+              <th><a class="links--black" href="#">about</a></th>
             </tr>
           </table>
         </div>
         <!--right nav-links -->
-        <div class="user">
-          <div class="user__cart"><a href="#"><i class="fas fa-shopping-cart"></i></a></div>
+        <div class="user cart">
+          <div class="user__cart user--black"><a href="#"><i class="fas fa-shopping-cart"></i></a><span class="user__count" id="js-count">1</span></div>
+          <div class="cart__detail"> <span>cart</span>
+            <div class="cart__items"> </div>
+            <button class="checkout__cta checkout__cta--orange">checkout</button>
+          </div>
           <div class="user__photo"> <img src="/build/Assets/images/image-avatar.png" alt="user.jpg"/></div>
         </div>
       </nav>
