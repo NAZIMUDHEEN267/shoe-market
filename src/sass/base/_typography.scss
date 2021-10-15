@@ -1,6 +1,19 @@
 
+//helper module 
+@use '../helpers/*helpers' as help;
 
+// google fonts 
 
+//kumbh font
 @import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
 
+//prompt font
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+
+@include help.media-desktop{
+	p{
+		font-size: help.mul(2,8)px;
+	}
+}
 

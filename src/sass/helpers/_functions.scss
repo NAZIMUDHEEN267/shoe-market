@@ -1,0 +1,27 @@
+
+//multiplication
+@function mul($value, $mul){
+	@return ($value * $mul) * 1rem;
+}
+
+//lightening
+@function font-light($color, $amount){
+	@if $amount <= 1 and $amount >= 0{
+		@return rgba($color,$amount);
+	}@else{
+		@error 'please check your values'
+	}
+}
+
+//
+@function sum($numbers...){
+	$result: 0;
+	@each $number in $numbers {
+		$result: $result + $number;
+	}
+	@return $result * 1rem;
+}
+
+@function convert($value){
+	@return ( $value / 16 ) * 1rem;
+}

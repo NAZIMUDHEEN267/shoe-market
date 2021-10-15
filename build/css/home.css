@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
 html {
   font-family: 100%;
   box-sizing: border-box;
@@ -11,21 +12,73 @@ html {
 }
 
 body {
-  background: grey;
+  background: white;
   font-family: "Kumbh sans", sans-serif;
 }
 
 a {
   text-decoration: none;
-  color: white;
 }
 
 li {
   list-style: none;
 }
 
-h1 {
-  color: blue;
+@media (max-width: 1440px) {
+  p {
+    font-size: 16rem px;
+  }
+}
+.header {
+  display: flex;
+  align-items: center;
+  height: 5rem;
+  width: 100%;
+}
+.header .nav {
+  display: flex;
+  justify-content: space-around;
+  width: inherit;
+  max-width: 1024px;
+  margin: auto;
+  align-items: center;
+  padding: 1.25rem;
+}
+.header .nav__links {
+  display: inline-flex;
+}
+.header .nav__links a {
+  margin-right: 1rem;
+  text-transform: capitalize;
+  color: #68707d;
+  font-weight: 400;
+  transition: all ease-in 200ms 200ms;
+}
+.header .nav__links a:hover {
+  color: rgba(0, 0, 0, 0.9);
+}
+.header .nav__name {
+  font-size: 2rem;
+  margin-right: 1.25rem;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: "Open Sans", sans-serif;
+}
+.header .nav .user {
+  display: inline-flex;
+  align-items: center;
+  gap: 2rem;
+}
+.header .nav .user__cart > a {
+  font-size: 1.5rem;
+  color: #68707d;
+  transition: all ease-in 200ms 200ms;
+}
+.header .nav .user__cart > a:hover {
+  color: rgba(0, 0, 0, 0.8);
+}
+.header .nav .user__photo img {
+  height: 3rem;
 }
 
 /*# sourceMappingURL=home.css.map */

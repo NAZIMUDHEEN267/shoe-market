@@ -3,10 +3,22 @@
 $desktop: 1440px;
 $tablet: 780px ;
 $mobile: 375px;
+$laptop: 1024px;
 
 //font-weight
 $font-weight-s: 400;
 $font-weight-m: 700;
 
 
-$blue: blue;
+//colors 
+$primary: hsl(26, 100%, 55%);
+$cream1: hsl(25, 100%, 94%);
+$dark-blue: hsl(220, 13%, 13%);
+$grey: hsl(219, 9%, 45%);
+$light-grey: hsl(220, 14%, 75%);
+$cream2: hsl(223, 64%, 98%);
+$white: hsl(0, 0%, 100%);
+$black: hsl(0, 0%, 0%);
+
+//animation time
+$transition: all ease-in 200ms 200ms;

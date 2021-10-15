@@ -3,21 +3,20 @@
 header.header
 	//navigation bar
 	nav.nav
-		h1.nav__name sneakers
-
 		//links
-		.links
+		.nav__links
+			h1.nav__name sneakers
 			//main nav links 
 			table
-					tr
-						-const navLinks = ['collections','men','women','about'];
+				tr
+					-const navLinks = ['collections','men','women','about'];
 						each item in navLinks 
 							th
 								a(href="#" class="links--grey")=  item
-
 		//right nav-links 
 		.user
 			.user__cart
-				i.fas.fa-shopping-cart
+				a(href="#")
+					i.fas.fa-shopping-cart
 			.user__photo 
 				img(src="/build/Assets/images/image-avatar.png", alt="user.jpg")

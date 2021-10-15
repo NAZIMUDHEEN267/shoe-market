@@ -1,4 +1,5 @@
 //============= global ================//
+@use '../helpers/variables' as var ;
 
 	html{
 		font-family: 100%;
@@ -12,13 +13,12 @@
 	}
 	
 	body{
-		background: grey;
+		background: var.$white;
 		font-family: 'Kumbh sans', sans-serif;
 	}
 
 	a{
 		text-decoration: none;
-		color: white;
 	}
 
 

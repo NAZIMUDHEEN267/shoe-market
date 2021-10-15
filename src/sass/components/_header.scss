@@ -1,6 +1,66 @@
  
+ //helper module
  @use '../helpers/*helpers' as helper;
 
- h1{
-	 color: helper.$blue;
+ .header{
+	 display: flex;
+	 align-items: center;
+	 height: helper.convert(80);
+	 width: 100%;
+
+	 .nav{
+		 display: flex;
+		 justify-content: space-around;
+		 width: inherit;
+		 max-width: helper.$laptop;
+		 margin: auto;
+		 align-items: center;
+		 padding: helper.convert(20);
+
+		 &__links{
+			 display: inline-flex;
+
+			 a{
+					margin-right: 1rem;
+					text-transform: capitalize;
+					color: helper.$grey;
+					font-weight: helper.$font-weight-s;
+					transition: helper.$transition;
+
+					&:hover{
+						color: helper.font-light(black, .9);
+					}
+			 }
+		 }
+
+		 &__name {
+			font-size: helper.sum(1,1);	
+			margin-right: helper.convert(20);
+			font-weight: helper.$font-weight-m;
+			cursor: pointer;
+			font-family: 'Open Sans', sans-serif;
+		 }
+
+		 .user{
+			 display: inline-flex;
+			 align-items: center;
+			 gap: 2rem;
+
+			 &__cart > a{
+				 font-size: helper.sum(1,.5);
+				 color: helper.$grey;
+				 transition: helper.$transition;
+
+				 &:hover{
+					 color: helper.font-light(black,.8);
+				 }
+			 }
+
+			 &__photo{
+				 img{
+					 height: helper.sum(1,1,1);
+				 }
+			 }
+		 }
+	 }
  }
