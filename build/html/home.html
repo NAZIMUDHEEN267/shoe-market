@@ -7,9 +7,9 @@
     <link rel="stylesheet" href="/build/css/home.css"/><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Document</title>
   </head>
-  <body id="body">
-    <div class="overlay"></div>
-    <div class="cart__detail" id="js-cart-detail"><span>cart</span>
+  <body id="js-body">
+    <div class="overlay" hidden="hidden" id="js-overlay"></div>
+    <div class="cart__detail" id="js-cart-detail" hidden="hidden"><span>cart</span>
       <div class="cart__items"> </div>
       <button class="checkout__cta checkout__cta--orange">checkout</button>
     </div>
@@ -18,17 +18,17 @@
       <!--nav-->
       <nav class="nav">
         <!--nav-bar -->
-        <div class="nav__bar"><i class="fas fa-bars"></i></div>
+        <div class="nav__bar"><i class="fas fa-bars" id="js-menu-bar"></i></div>
         <!--links-->
         <div class="nav__links">
           <h1 class="nav__name">sneakers</h1>
-          <!--main nav links -->
+          <!--main nav links-->
           <table>
-            <tr>
-              <th><a class="links--black links--border" href="#">collections</a></th>
-              <th><a class="links--black links--border" href="#">men</a></th>
-              <th><a class="links--black links--border" href="#">women</a></th>
-              <th><a class="links--black links--border" href="#">about</a></th>
+            <tr> 
+                  <th><a class="links--black links--border" href="#">collections</a></th>
+                  <th><a class="links--black links--border" href="#">men</a></th>
+                  <th><a class="links--black links--border" href="#">women</a></th>
+                  <th><a class="links--black links--border" href="#">about</a></th>
             </tr>
           </table>
         </div>
@@ -39,6 +39,15 @@
         </div>
       </nav>
     </header>
+    <!-- side bar-->
+    <div class="nav__side" id="js-nav-side"><i class="fas fa-times" id="js-close"></i>
+      <ul> 
+            <th><a class="links--black links--border" href="#">collections</a></th>
+            <th><a class="links--black links--border" href="#">men</a></th>
+            <th><a class="links--black links--border" href="#">women</a></th>
+            <th><a class="links--black links--border" href="#">about</a></th>
+      </ul>
+    </div>
+    <script src="/src/scripts/Header.js"> </script>
   </body>
-  <script src="/build/js/all.js"> </script>
 </html>

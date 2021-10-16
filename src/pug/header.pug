@@ -1,4 +1,11 @@
 
+//-nav links mixin
+mixin links
+	-const navLinks = ['collections','men','women','about'];
+	each item in navLinks 
+		th
+			a(href="#" class="links--black links--border")=  item
+
 //header 
 header.header
 	//nav
@@ -6,19 +13,17 @@ header.header
 
 		//nav-bar 
 		.nav__bar
-			i(class="fas fa-bars")
+			i(class="fas fa-bars")#js-menu-bar
 
 		//links
 		.nav__links
-
 			h1.nav__name sneakers
-			//main nav links 
+			//main nav links
 			table
-				tr
-					-const navLinks = ['collections','men','women','about'];
-						each item in navLinks 
-							th
-								a(href="#" class="links--black links--border")=  item
+				tr 
+					//-mixin for links 
+					+links 
+
 		//right nav-links 
 		.user.cart
 			.user__cart.user--black#js-cart
@@ -28,4 +33,9 @@ header.header
 			.user__photo.user--zoom 
 				img(src="/build/Assets/images/image-avatar.png", alt="user.jpg")
 
-			
+// side bar
+.nav__side#js-nav-side
+	i.fas.fa-times#js-close
+	ul 
+		+links
+				

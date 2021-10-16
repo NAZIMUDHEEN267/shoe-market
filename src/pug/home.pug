@@ -6,12 +6,11 @@ html(lang="en")
 		link(rel="stylesheet", href="/build/css/home.css")
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 		title Document
-	body#body
-		.overlay
-		.cart__detail#js-cart-detail
+	body#js-body
+		.overlay(hidden id="js-overlay")
+		.cart__detail#js-cart-detail(hidden)
 			span cart
 			.cart__items 
 			button.checkout__cta.checkout__cta--orange checkout
 		include header.pug
-		
-	script(src="/build/js/all.js") 
+		script(src="/src/scripts/Header.js") 

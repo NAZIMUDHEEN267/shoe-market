@@ -4,6 +4,11 @@
 	html{
 		font-family: 100%;
 		box-sizing: border-box;
+
+		::selection{
+			background: transparent;
+			color: transparent;
+		}
 	}
 	
 	*,*::after,*::before{

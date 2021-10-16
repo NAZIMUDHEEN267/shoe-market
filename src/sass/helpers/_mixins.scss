@@ -28,9 +28,8 @@
 	}
 }
 
-
-@mixin animation {
-
+// animation for basket items 
+@mixin animation(){
 	@keyframes fade-in {
 		from{
 			opacity: 0;
@@ -39,6 +38,17 @@
 		to{
 			opacity: .5;
 			transform: translateY(0px);
+		}
+	}
+}
+
+// animation for side bar
+@mixin side-bar ($start, $end){
+	@keyframes side-bar {
+		0%{
+			transform: $start;
+		}100%{
+			transform: $end;
 		}
 	}
 }

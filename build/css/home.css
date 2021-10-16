@@ -4,6 +4,10 @@ html {
   font-family: 100%;
   box-sizing: border-box;
 }
+html ::selection {
+  background: transparent;
+  color: transparent;
+}
 
 *, *::after, *::before {
   box-sizing: inherit;
@@ -146,6 +150,45 @@ li {
   transform: scale(2) translateY(15px);
 }
 
+.nav__side {
+  position: absolute;
+  height: 100%;
+  width: 28.125rem;
+  width: 70%;
+  background: white;
+  top: 0;
+  left: 0;
+  z-index: 6;
+  display: flex;
+  justify-content: start;
+  align-items: flex-start;
+  padding: 3.125rem 1.25rem 1.25rem;
+}
+@media (min-width: 780px) {
+  .nav__side {
+    display: none;
+  }
+}
+.nav__side .fas {
+  font-size: 2rem;
+  position: relative;
+  top: -30px;
+  cursor: pointer;
+  color: #68707d;
+}
+.nav__side ul {
+  line-height: 2.5;
+  width: 100%;
+  margin-top: 1rem;
+}
+.nav__side ul > * {
+  display: block;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: black;
+  text-transform: capitalize;
+}
+
 .overlay {
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 60%, transparent);
   height: 100%;
@@ -153,7 +196,15 @@ li {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: -1;
+  z-index: 1;
+}
+
+.side-in {
+  transform: translate(0%) !important;
+}
+
+.side-out {
+  transform: translateX(-100%) !important;
 }
 
 .cart__detail {
@@ -167,7 +218,8 @@ li {
   height: 250px;
   border-radius: 10px;
   margin-top: 1rem;
-  animation: fade-in 0.5s 10ms ease-in alternate;
+  animation: fade-in 5s 10ms ease-in alternate;
+  z-index: 2;
 }
 @keyframes fade-in {
   from {
@@ -227,6 +279,11 @@ li {
 
   .user__cart {
     font-size: 1.2rem;
+  }
+}
+@media (max-width: 375px) {
+  .nav__side ul > * {
+    font-size: 1rem;
   }
 }
 
