@@ -7,7 +7,12 @@
     <link rel="stylesheet" href="/build/css/home.css"/><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Document</title>
   </head>
-  <body> 
+  <body id="body">
+    <div class="overlay"></div>
+    <div class="cart__detail" id="js-cart-detail"><span>cart</span>
+      <div class="cart__items"> </div>
+      <button class="checkout__cta checkout__cta--orange">checkout</button>
+    </div>
     <!--header -->
     <header class="header">
       <!--nav-->
@@ -20,23 +25,20 @@
           <!--main nav links -->
           <table>
             <tr>
-              <th><a class="links--black" href="#">collections</a></th>
-              <th><a class="links--black" href="#">men</a></th>
-              <th><a class="links--black" href="#">women</a></th>
-              <th><a class="links--black" href="#">about</a></th>
+              <th><a class="links--black links--border" href="#">collections</a></th>
+              <th><a class="links--black links--border" href="#">men</a></th>
+              <th><a class="links--black links--border" href="#">women</a></th>
+              <th><a class="links--black links--border" href="#">about</a></th>
             </tr>
           </table>
         </div>
         <!--right nav-links -->
         <div class="user cart">
-          <div class="user__cart user--black"><a href="#"><i class="fas fa-shopping-cart"></i></a><span class="user__count" id="js-count">1</span></div>
-          <div class="cart__detail"> <span>cart</span>
-            <div class="cart__items"> </div>
-            <button class="checkout__cta checkout__cta--orange">checkout</button>
-          </div>
-          <div class="user__photo"> <img src="/build/Assets/images/image-avatar.png" alt="user.jpg"/></div>
+          <div class="user__cart user--black" id="js-cart"><a href="#"><i class="fas fa-shopping-cart"></i></a><span class="user__count" id="js-count">1</span></div>
+          <div class="user__photo user--zoom"> <img src="/build/Assets/images/image-avatar.png" alt="user.jpg"/></div>
         </div>
       </nav>
     </header>
   </body>
+  <script src="/build/js/all.js"> </script>
 </html>

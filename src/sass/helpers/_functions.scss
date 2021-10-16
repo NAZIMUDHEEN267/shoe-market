@@ -25,5 +25,5 @@
 }
 
 @function convert($value){
-	@return  math.div(16, $value) * 1rem;
+	@return  math.div($value, 16) * 1rem;
 }

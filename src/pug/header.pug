@@ -1,7 +1,6 @@
 
 //header 
 header.header
-
 	//nav
 	nav.nav
 
@@ -19,16 +18,14 @@ header.header
 					-const navLinks = ['collections','men','women','about'];
 						each item in navLinks 
 							th
-								a(href="#" class="links--black")=  item
+								a(href="#" class="links--black links--border")=  item
 		//right nav-links 
 		.user.cart
-			.user__cart.user--black
+			.user__cart.user--black#js-cart
 				a(href="#")
 					i.fas.fa-shopping-cart
 				span.user__count#js-count 1
-			.cart__detail 
-				span cart
-				.cart__items  
-				button.checkout__cta.checkout__cta--orange checkout
-			.user__photo 
+			.user__photo.user--zoom 
 				img(src="/build/Assets/images/image-avatar.png", alt="user.jpg")
+
+			

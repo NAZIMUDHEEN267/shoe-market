@@ -1,5 +1,5 @@
 //============= global ================//
-@use '../helpers/variables' as var ;
+@use '../helpers/*helpers' as helper ;
 
 	html{
 		font-family: 100%;
@@ -13,8 +13,9 @@
 	}
 	
 	body{
-		background: var.$white;
 		font-family: 'Kumbh sans', sans-serif;
+		position: relative;
+		height: 100vh;
 	}
 
 	a{
