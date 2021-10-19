@@ -31,15 +31,13 @@ window.onload = () => {
   });
 
   menuBtn.addEventListener('click', () => {
-    sideBar.classList.add('side-in');
-    sideBar.classList.remove('side-out');
+    sideBar.classList.replace('side-out', 'side-in');
     overlay.style.zIndex = 5;
     bgOn();
   });
 
   close.addEventListener('click', () => {
-    sideBar.classList.add('side-out');
-    sideBar.classList.remove('side-in');
+    sideBar.classList.replace('side-in', 'side-out');
     overlay.style.zIndex = 1;
     bgOff();
   });

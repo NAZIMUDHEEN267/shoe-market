@@ -1,0 +1,50 @@
+
+// gallery pictures
+mixin gallery()
+	.picture__list
+		-for(let i = 1 ; i < 5; i++)
+			.single__pic
+				img(src=`/build/Assets/images/image-product-${i}-thumbnail.jpg` alt=`product-${i}.jpg` class="list--touch")
+
+// pictures for products 
+main.main 
+	.main__gallery 
+		.gallery__picture 
+			img(src="/build/Assets/images/image-product-1.jpg", alt="product.jpg")
+		+gallery
+	.product__text
+		.product__company
+			h3 sneakers company 
+		.product__headline 
+			h2 fall limited edition sneakers 
+		.product__description
+			p Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi ratione deleniti, vero ad nobis sint corporis fugiat? Illum ad, ea inventore accusantium pariatur corporis, qui incidunt impedit possimus magni tempore.
+		.product__price
+			.price 	
+				p.price__value $125.00
+				span.price__discount 50%
+			.product__discount
+				h5 $250.00 
+		.product__cta
+			button.cta__minus - 
+			span.cta__count#js-count 4
+			button.cta__plus +
+			button.cta__add 
+				i.fas.fa-shopping-cart &nbsp;
+				| add to cart 
+
+// this gallery will get after clicking thumbnail picture
+.before__gallery(hidden)
+	.gallery__main 
+		.close 
+			i.fas.fa-times
+		.arrows 
+			i.fas.fa-angle-left
+			i.fas.fa-angle-right
+		.main__image 
+			img(src="/build/Assets/images/image-product-1.jpg", alt="main.jpg")
+		+gallery
+
+
+
+

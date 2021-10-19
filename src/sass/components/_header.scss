@@ -6,7 +6,7 @@
  .header{
 	 display: flex;
 	 align-items: center;
-	 height: helper.convert(80);
+	 height: helper.convert(110);
 	 width: 100%;
 	 position: fixed;
 	 z-index: 4;
@@ -15,20 +15,20 @@
 	 // nav
 	 .nav{
 		 display: flex;
-		 border-bottom: 1px solid helper.font-light(black,.1);
 		 justify-content: space-around;
 		 width: inherit;
 		 max-width: helper.$laptop;
 		 margin: auto;
 		 align-items: center;
-		 padding: helper.convert(20);
 		 position: relative;
+		 height: 100%;
+		 border-bottom: 1px solid helper.font-light(black,.1);
 
 		 //nav bar 
 		&__bar {
 			position: absolute;
-			font-size: 1.2rem;
-			left: .5rem;
+			font-size: 1.5rem;
+			left: 1.4rem;
 			top: 40%;
 			cursor: pointer;
 
@@ -36,18 +36,27 @@
 			@media (min-width: helper.$tablet){display: none;}
 		}
 
+		&--border:hover{
+			border: 1px solid black;
+			padding: 5px;
+		}
+
 		// nav links 
 		 &__links{
 			 display: inline-flex;
 			 
 			 a{	  
-				 margin-right: 1rem;
 				 text-transform: capitalize;
 				 color: helper.$grey;
 				 font-weight: helper.$font-weight-s;
 				 transition: helper.$transition;
 				 position: relative;
 				 transition: all ease-in 200ms 200ms;
+				margin-left: helper.convert(50);
+
+				 :not(:first-child){
+					margin-left: helper.convert(30);
+				 }
 			 }
 
 			 .links--black:hover{
@@ -61,7 +70,7 @@
 				background: helper.$primary;
 				position: absolute;
 				left: 0;
-				bottom: -27px;
+				bottom: -43px;
 			}
 		 }
 
@@ -115,11 +124,12 @@
 					 border: 2px solid helper.$primary;
 					 height: inherit;
 					 width: inherit;
+					 cursor: pointer;
 				 }
 
-				 &:hover img{
-					 transform: scale(2) translateY(15px);
-				 }
+				 .user--zoom:hover{
+					transform: scale(2);
+				}
 			 }
 		 }
 	 }
@@ -197,8 +207,8 @@
 	height: 250px;
 	border-radius: 10px;
 	@include helper.animation();
-	margin-top: 1rem;
-	animation: fade-in 5s 10ms ease-in alternate;
+	margin-top: 2rem;
+	animation: fade-in .5s 10ms ease-in;
 	z-index: 2;
 
 	span{
