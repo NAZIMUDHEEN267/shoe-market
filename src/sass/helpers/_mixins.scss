@@ -1,8 +1,8 @@
 // ================= mixins ==============//
 
 @use './variables' as var;
-
-
+@use './functions' as fun;
+ 
 //media queries 
 @mixin media-desktop {
 	@media (max-width: var.$desktop) {
@@ -47,6 +47,86 @@
 			transform: $start;
 		}100%{
 			transform: $end;
+		}
+	}
+}
+
+
+// picture list mixin 
+@mixin  picture-list {
+	.picture__list{
+		display: flex;
+		width: 100%;
+		justify-content: center;
+		column-gap: 10px;
+	
+		.single__pic {
+			outline: none;
+			position: relative;
+			cursor: pointer;
+	
+			&::after{
+				content: "";
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				border: 2px solid var.$primary;
+				top: 0;
+				left: 0;
+				border-radius: 10px;
+				visibility: hidden;
+			}
+	
+			img{
+			width: 85px;
+			border-radius: 10px;
+			object-fit: cover;
+			}
+	
+			&:hover::after{
+				visibility: visible;
+			}
+	
+			&:hover img{
+				filter: brightness(1.2);
+			}
+		}
+	}
+}
+
+
+// main picture 
+@mixin main-picture {
+	min-width: 40%;
+	height: fun.convert(350);
+	margin: auto;
+	padding: 10px;
+
+	img{
+		border-radius: 7px;
+		width: 100%;
+		height: 100%;
+	}
+}
+
+// arrows 
+@mixin arrows ($visibility){
+
+	.arrows{
+		position: absolute;
+		width: 100%;
+		color: initial;
+		display: flex;
+		justify-content: space-between;
+		top: 45%;
+		right: 0%;
+		visibility: $visibility;
+
+		i{
+			background-color: var.$white;
+			padding: 10px 15px;
+			border-radius: 50%;
+			cursor: pointer;
 		}
 	}
 }

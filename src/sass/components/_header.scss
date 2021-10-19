@@ -122,15 +122,15 @@
 				 img{
 					 border-radius: 50%;
 					 border: 2px solid helper.$primary;
-					 height: inherit;
-					 width: inherit;
+					 height: 100%;
+					 width: 100%;
 					 cursor: pointer;
 				 }
-
-				 .user--zoom:hover{
-					transform: scale(2);
-				}
 			 }
+
+			 &--zoom:hover{
+				transform: scale(2);
+			}
 		 }
 	 }
  }
@@ -251,21 +251,15 @@
 	overflow: hidden;
 }
 
-
-
  //media 
  @include helper.media-tablet{
 	table{
 		display: none;
 	}
 
-	.user__photo {
-		height: helper.sum(1,1);
-		width: helper.sum(1,1);
-	}
-
-	.user__cart{
-		font-size: 1.2rem;
+	.user__photo{
+		width: helper.sum(1,1,.5) !important;
+		height: helper.sum(1,1,.5) !important;
 	}
 
  }
@@ -278,5 +272,9 @@
 				font-size: helper.sum(1,0);
 			}
 		}
+	}
+
+	.nav > .nav__bar{
+		top: 20%;
 	}
  }

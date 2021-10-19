@@ -6,11 +6,23 @@ mixin gallery()
 			.single__pic
 				img(src=`/build/Assets/images/image-product-${i}-thumbnail.jpg` alt=`product-${i}.jpg` class="list--touch")
 
+// arrows for pictures
+mixin arrows ()
+	.arrows 
+		i.fas.fa-angle-left
+		i.fas.fa-angle-right
+
+
 // pictures for products 
 main.main 
-	.main__gallery 
-		.gallery__picture 
+	.main__gallery
+		.gallery__picture
+
+			//- arrows
+			+arrows
 			img(src="/build/Assets/images/image-product-1.jpg", alt="product.jpg")
+		
+		//- gallery pictures
 		+gallery
 	.product__text
 		.product__company
@@ -34,15 +46,17 @@ main.main
 				| add to cart 
 
 // this gallery will get after clicking thumbnail picture
-.before__gallery(hidden)
-	.gallery__main 
+.before__gallery
+	.gallery__main
+
+		//-arrows 
+		+arrows
 		.close 
 			i.fas.fa-times
-		.arrows 
-			i.fas.fa-angle-left
-			i.fas.fa-angle-right
 		.main__image 
 			img(src="/build/Assets/images/image-product-1.jpg", alt="main.jpg")
+
+		//-gallery pictures
 		+gallery
 
 

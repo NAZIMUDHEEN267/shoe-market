@@ -25,56 +25,16 @@
 		position: relative;
 		
 		.gallery__picture{
-			min-width: 40%;
-			height: help.convert(350);
-			margin: auto;
-			padding: 10px;
 
-			img{
-				border-radius: 7px;
-				width: 100%;
-				height: 100%;
-			}
+		// hidden arrows
+		@include help.arrows(help.$hidden);
+
+		// main picture mixin 
+		@include help.main-picture;
 		}
 
-		.picture__list{
-			display: flex;
-			width: 100%;
-			justify-content: center;
-			column-gap: 10px;
-
-			.single__pic {
-				outline: none;
-				position: relative;
-				cursor: pointer;
-
-				&::after{
-					content: "";
-					width: 100%;
-					height: 100%;
-					position: absolute;
-					border: 2px solid help.$primary;
-					top: 0;
-					left: 0;
-					border-radius: 10px;
-					visibility: hidden;
-				}
-
-				img{
-				width: 85px;
-				border-radius: 10px;
-				object-fit: cover;
-				}
-
-				&:hover::after{
-					visibility: visible;
-				}
-
-				&:hover img{
-					opacity: .5;
-				}
-			}
-		}
+		// picture list mixin
+		@include help.picture-list;
 	}
 
 
@@ -165,5 +125,93 @@
 				box-shadow: 0px 2px 10px help.font-light(help.$primary, .3);
 			}
 		}
+	}
+}
+
+
+
+
+// before gallery , this will open when user touch or click the list of images 
+
+.before__gallery{
+	visibility: hidden;
+	position: absolute;
+	top: 0%;
+	left: 0%;
+	height: 100%;
+	width: 100%;
+	background-color: help.font-light(black,.5);
+	z-index: 10;
+	overflow: hidden;
+	display: grid;
+	place-content: center;
+
+	.gallery__main{
+		width: 100%;
+		height: fit-content;
+		padding: 10px;
+		position: relative;
+
+		// arrows 
+		@include help.arrows(inherit);
+
+		.close{
+			font-size: 2rem;
+			font-weight: 500;
+			text-align: right;
+			padding: 10px;
+			color: help.$white;
+			
+			i{
+				cursor: pointer;
+			}
+		}
+
+		.main__image{
+			// main picture mixin
+			@include help.main-picture;
+		}
+	}
+
+	// picture list mixin
+	@include help.picture-list;
+
+}
+
+
+// media query  tablet 
+@include help.media-tablet {
+	.main{	
+		grid-template-columns: 1fr;
+	
+		&__gallery{
+			margin: 2rem 0;
+		}
+	}
+}
+
+
+// media query mobile 
+@include help.media-mobile{
+	.main{
+		width: 100%;
+		height: auto;
+	
+		.gallery__picture{
+			min-width: 100%;
+			padding: 0;
+
+			// arrows 
+			@include help.arrows(help.$visible);
+			
+			img{
+				border-radius: 0;
+			}
+		}
+
+		.picture__list{
+			display: none;
+		}
+
 	}
 }
