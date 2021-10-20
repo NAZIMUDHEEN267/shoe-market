@@ -1,0 +1,86 @@
+
+@use '../base/*base' as base;
+@use '../helpers/*helpers' as helper;
+
+// body 
+@include helper.body(helper.$light-grey);
+
+body{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#wave{
+	position: absolute;
+	bottom: 0;
+	z-index: -1;
+}
+
+// login 
+.login{
+	width: helper.convert(450);
+	height: helper.convert(450);
+	backdrop-filter: blur(30px);
+	padding: 10px;
+	border-radius: 10px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	
+	.headline{
+		text-align: center;
+		line-height: 3;
+		font-size: helper.mul(1,2);
+		text-transform: capitalize;
+	}
+
+	span{
+		display: block;
+		width: 100%;
+		background-color: helper.font-light(helper.$light-grey, .4);
+		margin: 1rem 0;
+		padding: .3rem;
+
+		i{
+			margin: 0 1rem;
+			color: helper.$grey;
+		}
+
+		input{
+			width: auto;
+			padding: 10px;
+			border: none;
+			outline: none;
+		}
+	}
+
+	.login__cta{
+		width: 100%;
+		padding: 10px;
+		background: helper.$primary;
+		color: helper.$white;
+		font-weight: helper.$font-weight-m;
+		border: none;
+		text-transform: uppercase;
+		margin-bottom: .5rem;
+		border-radius: 4px;
+		cursor: pointer;
+	}
+}
+
+// media desktop
+@media (min-width: helper.$desktop){
+	.login{
+		width: helper.convert(700);
+	}
+}
+
+// media tablet
+@include helper.media-tablet{
+	.login{
+		width: 80%;
+	}
+}
+
+

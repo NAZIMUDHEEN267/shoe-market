@@ -23,6 +23,10 @@ module.exports = (grunt) => {
         src: 'build/css/home.css',
         dest: 'build/css/home.min.css',
       },
+      file3: {
+        src: 'build/css/login.css',
+        dest: 'build/css/login.min.css',
+      },
     },
 
     htmlmin: {
@@ -50,7 +54,7 @@ module.exports = (grunt) => {
         tasks: ['concat', 'uglify', 'htmlmin'],
       },
       w2: {
-        files: ['build/css/home.css', 'build/css/sign-in.css'],
+        files: ['build/css/home.css', 'build/css/sign-in.css', 'build/css/login.css'],
         tasks: ['cssmin'],
       },
       w3: {

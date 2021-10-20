@@ -18,7 +18,6 @@
 	top: 25%;
 	left: 50%;
 	transform: translate(-50%);
-	background-color: white;
 	width: 80%;
 	height: 60%;
 	margin: auto;
@@ -98,6 +97,7 @@
 		width: 100%;
 		z-index: 10;
 		padding: 20px 40px;
+		background: helper.$white;
 
 		&__symbol{
 			display: block;
