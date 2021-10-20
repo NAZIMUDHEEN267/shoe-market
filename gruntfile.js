@@ -15,7 +15,11 @@ module.exports = (grunt) => {
     },
 
     cssmin: {
-      dist: {
+      file: {
+        src: 'build/css/sign-in.css',
+        dest: 'build/css/sign-in.min.css',
+      },
+      file2: {
         src: 'build/css/home.css',
         dest: 'build/css/home.min.css',
       },
@@ -34,6 +38,8 @@ module.exports = (grunt) => {
       dev: {
         files: {
           'build/html/*home.html': 'build/html/*home.html',
+          'build/html/*sign-in.html': 'build/html/*sing-in.html',
+          'build/html/*login.html': 'build/html/*login.html',
         },
       },
     },
@@ -44,7 +50,7 @@ module.exports = (grunt) => {
         tasks: ['concat', 'uglify', 'htmlmin'],
       },
       w2: {
-        files: ['build/css/home.css'],
+        files: ['build/css/home.css', 'build/css/sign-in.css'],
         tasks: ['cssmin'],
       },
       w3: {

@@ -1,0 +1,57 @@
+html(lang="en")
+	head
+		meta(charset="UTF-8")
+		meta(http-equiv="X-UA-Compatible", content="IE=edge")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		title sign-up
+
+		// cdn for font awesome
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+		// stylesheet
+		link(rel="stylesheet", href="/build/css/sign-in.min.css")
+	body 
+
+		//- sign-in box	
+		.sign-in
+
+			//- sign in text left 
+			.sign__text
+
+				i.fas.fa-angle-double-down.text__symbol
+				h2.text__headline  join us
+				p.text__des Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae ratione quod illum consequatur quit
+
+				button.text__cta.cta--bg about us
+
+			//- sign in form right
+			.form 
+				.form__symbol 
+					i.far.fa-user-circle
+
+				h2.headline sign-in 
+				form(action="build/html/*home.html" id="form")
+					
+					//- name
+					span.form__name
+						input(type="text" placeholder="Name" required) 
+
+					//- user name
+					span.form__usname
+						input(type="text" placeholder="User name" required) 
+
+					//- email
+					span.form__email 
+						input(type="email" placeholder="Email"  required)
+
+					//- password
+					span.form__passwd 
+						input(type="password" placeholder="Password"  required)
+
+				.form__links
+					//- login
+					span or
+						a(href="build/html/*login.html") &nbsp; login
+
+					//- sign-cta
+					button(type="submit" form="form" class="form__cta cta--touch") sign-up

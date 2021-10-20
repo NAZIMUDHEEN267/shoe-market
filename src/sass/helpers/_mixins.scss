@@ -2,6 +2,17 @@
 
 @use './variables' as var;
 @use './functions' as fun;
+
+
+// body 
+@mixin  body($bg){
+	body{
+		font-family: 'Kumbh sans', sans-serif;
+		position: relative;
+		height: 100vh;
+		background: $bg;	
+	}
+}
  
 //media queries 
 @mixin media-desktop {

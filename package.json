@@ -2,10 +2,10 @@
   "name": "ecommerce-product-page-main",
   "version": "1.0.0",
   "description": "![Design preview for the E-commerce product page coding challenge](./design/desktop-preview.jpg)",
-  "main": "index.js",
+  "main": "Home.js",
   "scripts": {
-    "pug": "pug -w src/pug/*home.pug -o build/html",
-    "sass": "sass --watch src/sass/templates/home.scss:build/css/home.css"
+    "pug": "pug -w src/pug/*sign-in.pug -o build/html",
+    "sass": "sass --watch src/sass/templates/sign-in.scss:build/css/sign-in.css"
   },
   "keywords": [],
   "author": "",
@@ -17,11 +17,9 @@
     "eslint-plugin-import": "^2.25.2",
     "grunt": "^1.4.1",
     "grunt-contrib-concat": "^2.0.0",
+    "grunt-contrib-cssmin": "^4.0.0",
     "grunt-contrib-htmlmin": "^3.1.0",
     "grunt-contrib-uglify": "^5.0.1",
     "grunt-contrib-watch": "^1.1.0"
-  },
-  "dependencies": {
-    "grunt-contrib-cssmin": "^4.0.0"
   }
 }

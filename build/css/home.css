@@ -15,12 +15,6 @@ html ::selection {
   padding: 0;
 }
 
-body {
-  font-family: "Kumbh sans", sans-serif;
-  position: relative;
-  height: 100vh;
-}
-
 a {
   text-decoration: none;
 }
@@ -571,6 +565,12 @@ li {
   .main .picture__list {
     display: none;
   }
+}
+body {
+  font-family: "Kumbh sans", sans-serif;
+  position: relative;
+  height: 100vh;
+  background: none;
 }
 
 /*# sourceMappingURL=home.css.map */

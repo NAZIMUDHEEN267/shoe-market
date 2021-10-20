@@ -1,0 +1,157 @@
+
+@use '../base/*base' as base;
+@use '../helpers/*helpers' as helper;
+
+// body 
+@include helper.body(linear-gradient(to right, #cf5b02 60%, helper.$primary));
+
+// place holder selector
+%headline{
+	font-size: helper.mul(1,2);
+	margin-bottom: 1rem;
+	text-transform: capitalize;
+}
+
+//  sign in box 
+.sign-in {
+	position: absolute;
+	top: 25%;
+	left: 50%;
+	transform: translate(-50%);
+	background-color: white;
+	width: 80%;
+	height: 60%;
+	margin: auto;
+	display: flex;
+	align-items: center;
+	box-shadow: 0px 2px 10px helper.font-light(black, .3);
+	gap: 10px;
+	overflow: hidden;
+	max-width: helper.$desktop;
+	max-height: helper.$mobile;
+	font-family: 'Ubuntu', sans-serif;
+
+	.sign__text{
+		flex: 1;
+		background: linear-gradient(to right, #cf5b02 60%, helper.$primary);
+		height: 100%;
+		width: 100%;
+		padding: 10px;
+		text-align: center;
+		color: helper.$white;
+		position: relative;
+
+		.text__symbol{
+			font-size: helper.mul(1,2);
+			font-weight: helper.$font-weight-m;
+			line-height: 3;
+		}
+
+		.text__headline{
+			@extend %headline;
+		}
+
+		.text__des{
+			max-width: 80%;
+			margin: auto;
+			line-height: 1.3;
+		}
+
+		.text__cta{
+			padding: 10px 20px;
+			border-radius: 30px;
+			border: none;
+			outline: none;
+			cursor: pointer;
+			margin-top: 2rem;
+			font-weight: helper.$font-weight-m;
+			transition: all ease-in 200ms 200ms;
+
+			&::first-letter{
+				text-transform: uppercase;
+			}
+		}
+
+		.cta--bg:hover{
+			box-shadow: inset -4rem 0 0 0 helper.$black,
+			inset 4rem 0 0 0 helper.$black;
+			color: white;
+		}
+
+		&::before{
+			content: "";
+			width: 20%;
+			height: 110%;
+			background: white;
+			position: absolute;
+			top: -2%;
+			right: -12%;
+			border-radius: 50%;
+			z-index: 1;
+		}
+	}
+
+	.form{
+		flex: 1;
+		position: relative;
+		height: 100%;
+		width: 100%;
+		z-index: 10;
+		padding: 20px 40px;
+
+		&__symbol{
+			display: block;
+			text-align: center;
+			margin: .5rem 0;
+			font-size: 2rem;
+		}
+
+		.headline{
+			@extend %headline;
+			text-align: center;
+		}
+
+		* span{
+			display: block;
+			margin-bottom: 10px;
+		}
+		
+		* input{
+			width: 100%;
+			padding: 5px 10px;
+			border: 1px solid helper.$grey;
+			outline: none;
+		}
+
+		.form__links{
+			display: flex;
+			justify-content: space-between;
+
+			.form__cta{
+				background-color: helper.$primary;
+				color: helper.$white;
+				padding: 10px;
+				border-radius: 20px;
+				font-weight: helper.$font-weight-m;
+				border: none;
+				cursor: pointer;
+			}
+
+			.cta--touch:hover{
+				background: darken(helper.$primary, 20);
+			}
+		}
+	}
+
+}
+
+// media tablet 
+@include helper.media-tablet{
+	.sign__text{
+		display: none;
+	}
+
+	%headline{
+		font-size: helper.mul(1,1.4);
+	}
+}
