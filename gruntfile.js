@@ -3,14 +3,18 @@ module.exports = (grunt) => {
 
     concat: {
       js: {
-        src: ['src/scripts/*.js'],
+        src: ['src/scripts/Header.js', 'src/scripts/HomePage.js'],
         dest: 'build/js/Home.js',
       },
     },
 
     uglify: {
       my_target: {
-        files: { 'build/js/Home.js': ['build/js/Home.js'] },
+        files: {
+          'build/js/Home.js': ['build/js/Home.js'],
+          'build/js/Login.js': ['src/scripts/Login.js'],
+          'build/js/Sign-in.js': ['src/scripts/Sign-in.js'],
+        },
       },
     },
 
@@ -34,9 +38,6 @@ module.exports = (grunt) => {
         options: {
           removeComments: true,
           collapseWhitespace: true,
-        },
-        files: {
-          'build/html/*home.html': 'build/html/*home.html',
         },
       },
       dev: {

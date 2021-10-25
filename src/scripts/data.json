@@ -1,0 +1,14 @@
+{
+		"bgImage":[
+			"/build/Assets/images/image-product-1.jpg",
+			"/build/Assets/images/image-product-2.jpg",
+			"/build/Assets/images/image-product-3.jpg",
+			"/build/Assets/images/image-product-4.jpg"
+		],
+		"smImage":[
+			"/build/Assets/images/image-product-1-thumbnail.jpg",
+			"/build/Assets/images/image-product-2-thumbnail.jpg",
+			"/build/Assets/images/image-product-3-thumbnail.jpg",
+			"/build/Assets/images/image-product-4-thumbnail.jpg"
+		]
+}

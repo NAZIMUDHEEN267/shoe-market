@@ -1,14 +1,18 @@
 
+
+// ================ login page =============== //
+
 @use '../base/*base' as base;
 @use '../helpers/*helpers' as helper;
 
 // body 
-@include helper.body(helper.$light-grey);
+@include helper.body(helper.$white);
 
 body{
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	overflow: hidden;
 }
 
 #wave{
@@ -27,6 +31,7 @@ body{
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	box-shadow: 0px 2px 10px helper.font-light(black,.8);
 	
 	.headline{
 		text-align: center;

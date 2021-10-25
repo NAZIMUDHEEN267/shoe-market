@@ -4,8 +4,8 @@
   "description": "![Design preview for the E-commerce product page coding challenge](./design/desktop-preview.jpg)",
   "main": "Home.js",
   "scripts": {
-    "pug": "pug -w src/pug/*login.pug -o build/html",
-    "sass": "sass --watch src/sass/templates/login.scss:build/css/login.css"
+    "pug": "pug -w src/pug/*home.pug -o build/html",
+    "sass": "sass --watch src/sass/templates/home.scss:build/css/home.css"
   },
   "keywords": [],
   "author": "",

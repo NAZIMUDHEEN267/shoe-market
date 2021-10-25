@@ -71,7 +71,7 @@
 		justify-content: center;
 		column-gap: 10px;
 	
-		.single__pic {
+		.single__pic, .bf__pic {
 			outline: none;
 			position: relative;
 			cursor: pointer;
@@ -98,7 +98,7 @@
 				visibility: visible;
 			}
 	
-			&:hover img{
+			&:hover .pic--touch{
 				filter: brightness(1.2);
 			}
 		}
@@ -108,8 +108,8 @@
 
 // main picture 
 @mixin main-picture {
-	min-width: 40%;
-	height: fun.convert(350);
+	min-width: 50%;
+	height: fun.convert(380);
 	margin: auto;
 	padding: 10px;
 

@@ -1,27 +1,29 @@
 
-// gallery pictures
+//- gallery pictures
 mixin gallery()
-	.picture__list
-		-for(let i = 1 ; i < 5; i++)
-			.single__pic
-				img(src=`/build/Assets/images/image-product-${i}-thumbnail.jpg` alt=`product-${i}.jpg` class="list--touch")
+	.picture__list#js-list
 
-// arrows for pictures
+//- arrows for pictures
 mixin arrows ()
 	.arrows 
-		i.fas.fa-angle-left
-		i.fas.fa-angle-right
+		i.fas.fa-angle-left#js-arrL
+		i.fas.fa-angle-right#js-arrR
 
-
-// pictures for products 
+//- before gallery list 
+mixin bfList()
+	.picture__list
+		-for(let i = 1; i< 5; i++)
+			.bf__pic
+				img(src=`/build/Assets/images/image-product-${i}-thumbnail.jpg` alt="product.jpg")
+		
+//- pictures for products 
 main.main 
 	.main__gallery
-		.gallery__picture
-
+		.gallery__picture#js-gl__pic
+			img(src="/build/Assets/images/image-product-1.jpg", alt="product.jpg")
 			//- arrows
 			+arrows
-			img(src="/build/Assets/images/image-product-1.jpg", alt="product.jpg")
-		
+
 		//- gallery pictures
 		+gallery
 	.product__text
@@ -45,20 +47,17 @@ main.main
 				i.fas.fa-shopping-cart &nbsp;
 				| add to cart 
 
-// this gallery will get after clicking thumbnail picture
-.before__gallery
-	.gallery__main
+//- this gallery will get after clicking thumbnail picture
+.before__gallery.display#js-bf__gl
 
+	.gallery__main
 		//-arrows 
 		+arrows
 		.close 
 			i.fas.fa-times
-		.main__image 
-			img(src="/build/Assets/images/image-product-1.jpg", alt="main.jpg")
-
-		//-gallery pictures
-		+gallery
-
+		.main__image
+			img(src="/build/Assets/images/image-product-1.jpg", alt="img.jpg")
+		+bfList()
 
 
 

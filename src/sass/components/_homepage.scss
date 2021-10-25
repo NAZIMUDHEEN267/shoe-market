@@ -1,4 +1,7 @@
 
+
+// ================== home page ================== //
+
 // helper module 
 @use '../helpers/*helpers' as help;
 
@@ -134,7 +137,7 @@
 // before gallery , this will open when user touch or click the list of images 
 
 .before__gallery{
-	visibility: hidden;
+	display: none;
 	position: absolute;
 	top: 0%;
 	left: 0%;
@@ -176,8 +179,20 @@
 	// picture list mixin
 	@include help.picture-list;
 
+	// bf pic
+	.bf__pic {
+		cursor: default !important;
+
+		&::after{
+		display: none;
+		}
+	}
 }
 
+// display class
+.display{
+	display: none;
+}
 
 // media query  tablet 
 @include help.media-tablet {

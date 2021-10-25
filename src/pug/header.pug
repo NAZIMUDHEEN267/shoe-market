@@ -6,25 +6,25 @@ mixin links
 		th
 			a(href="#" class="links--black links--border")=  item
 
-//header 
+//- header 
 header.header
-	//nav
+	//- nav
 	nav.nav
 
-		//nav-bar 
+		//- nav-bar 
 		.nav__bar.nav--border
 			i(class="fas fa-bars")#js-menu-bar
 
-		//links
+		//- links
 		.nav__links
 			h1.nav__name sneakers
-			//main nav links
+			//- main nav links
 			table
 				tr 
-					//-mixin for links 
+					//- mixin for links 
 					+links 
 
-		//right nav-links 
+		//- right nav-links 
 		.user.cart
 			.user__cart.user--black#js-cart
 				a(href="#")
@@ -33,7 +33,7 @@ header.header
 			.user__photo
 				img(src="/build/Assets/images/image-avatar.png" class="user--zoom", alt="user.jpg")
 
-// side bar
+//- side bar
 .nav__side.side-out#js-nav-side
 	i.fas.fa-times#js-close
 	ul 
