@@ -45,6 +45,7 @@
 	.product__text{
 		width: 100% / 2;
 		padding: 10px;
+		word-wrap: break-word;
 
 		.product__company{
 			font-weight: help.$font-weight-s;
@@ -101,10 +102,9 @@
 
 			>*{
 				font-weight: help.$font-weight-m;
-				border: none;
-				outline: none;
 				cursor: pointer;
 				margin: 0 .8rem;
+				border: none;
 			}
 
 			.cta__count{
@@ -116,6 +116,11 @@
 				padding: 10px;
 				color: help.$primary;
 				font-size: 1.3rem;
+
+				&:active{
+					background: help.font-light(help.$primary, .7);
+					color: help.$white;
+				}
 			}
 
 			.cta__add{
@@ -151,9 +156,10 @@
 
 	.gallery__main{
 		width: 100%;
-		height: fit-content;
+		height: 100%;
 		padding: 10px;
 		position: relative;
+		transition: all ease-in .4s;
 
 		// arrows 
 		@include help.arrows(inherit);
@@ -169,8 +175,29 @@
 				cursor: pointer;
 			}
 		}
-
+		
 		.main__image{
+			overflow: hidden;
+			scroll-behavior: smooth;
+			height: 345px;
+			width: 360px;
+			
+			-ms-overflow-style: none; 
+			scrollbar-width: none;  
+			
+			.main__image::-webkit-scrollbar {
+				display: none;
+			}
+
+			.image__scroll{
+				display: flex;
+				transform: translateX(0);
+				  img{
+					  width: 100% !important;
+					  margin-right: 20px;
+				  }
+			  }
+
 			// main picture mixin
 			@include help.main-picture;
 		}
@@ -202,6 +229,10 @@
 		&__gallery{
 			margin: 2rem 0;
 		}
+	}
+
+	.before__gallery{
+		display: none;
 	}
 }
 

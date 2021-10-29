@@ -93,12 +93,9 @@
 			 // cart basket
 			 &__cart {
 				 position: relative;
-
-				a{
 					font-size: helper.sum(1,.5);
 					color: helper.$grey;
 					transition: helper.$transition;
-				}
 			 }
 
 			 &__count{
@@ -113,7 +110,7 @@
 				right: -8%;
 			}
 			
-			 &--black:hover{
+			 &--black:active{
 				color: helper.font-light(black,.8);
 			}
 
@@ -276,7 +273,21 @@
 		}
 	}
 
-	.nav > .nav__bar{
-		top: 20%;
+	.nav__name{
+		margin-left: 1rem;
+		margin-right: 0;
+	}
+
+	.user{
+		gap: 1rem !important;
+	}
+
+	.user__photo{
+		width: helper.sum(1,1) !important;
+		height: helper.sum(1,1) !important;
+	}
+
+	.user__cart{
+		font-size: 1.3rem !important;
 	}
  }

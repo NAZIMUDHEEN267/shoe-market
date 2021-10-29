@@ -2,8 +2,12 @@
 const picList = document.getElementById('js-list');
 const mainPic = document.querySelector('#js-gl__pic img');
 const bfGallery = document.getElementById('js-bf__gl');
-const leftArr = document.getElementById('js-arrL');
-const rightArr = document.getElementById('js-arrR');
+const rightArrBf = document.getElementById('js-arrR-bf');
+const leftArrBf = document.getElementById('js-arrL-bf');
+const closeBtn = document.querySelector('.close #js-close');
+const bfScroll = document.getElementById('js-scroll');
+const bfList = document.getElementById('js-bf-list');
+
 
 // data fetching witch ajax call
 const getData = function (url) {
@@ -49,6 +53,55 @@ getData(url).then((data) => {
     throw new Error(err);
   });
 
-leftArr.addEventListener('click', () => {
-	
+closeBtn.addEventListener('click', () => {
+  bfGallery.classList.add('display');
+});
+
+let value = -1440;
+let count = -1;
+const minRoll = 0;
+const maxRoll = -1440;
+
+function border(node) {
+  for (let index = 0; index < bfList.childNodes.length; index += 1) {
+    bfList.childNodes[index].style.opacity = '1';
+    if (index === node) {
+      bfList.childNodes[index].style.opacity = '.6';
+    }
+  }
+}
+
+leftArrBf.addEventListener('click', () => {
+  if (value !== maxRoll) {
+  // node count
+    count -= 1;
+
+    // border function calling
+    border(count);
+
+    value -= 360;
+
+    bfScroll.style.transform = `translateX(${value}px)`;
+  } if (count === 0 || value === maxRoll) {
+    leftArrBf.style.visibility = 'hidden';
+    rightArrBf.style.visibility = 'visible';
+  }
+});
+
+rightArrBf.addEventListener('click', () => {
+  if (value !== minRoll) {
+    // node count
+    count += 1;
+
+    // border function calling
+    border(count);
+
+    value += 360;
+    bfScroll.style.transform = `translateX(${value}px)`;
+    leftArrBf.style.visibility = 'hidden';
+	console.log(value);
+  } if (count === bfList.childNodes.length - 1 || value === minRoll) {
+    rightArrBf.style.visibility = 'hidden';
+    leftArrBf.style.visibility = 'visible';
+  }
 });

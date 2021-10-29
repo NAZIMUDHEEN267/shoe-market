@@ -108,8 +108,8 @@
 
 // main picture 
 @mixin main-picture {
-	min-width: 50%;
 	height: fun.convert(380);
+	min-width: 50%;
 	margin: auto;
 	padding: 10px;
 
@@ -130,8 +130,9 @@
 		display: flex;
 		justify-content: space-between;
 		top: 45%;
-		right: 0%;
+		left: 0%;
 		visibility: $visibility;
+		z-index: 4;
 
 		i{
 			background-color: var.$white;

@@ -3,16 +3,26 @@
 mixin gallery()
 	.picture__list#js-list
 
+
+mixin bf-gallery()
+	-for(let i = 1  ; i <= 4 ; i++)
+		img(src=`/build/Assets/images/image-product-${i}.jpg`, alt="product.jpg")
+
 //- arrows for pictures
-mixin arrows ()
+mixin bf-arrows ()
 	.arrows 
-		i.fas.fa-angle-left#js-arrL
-		i.fas.fa-angle-right#js-arrR
+		i.fas.fa-angle-left#js-arrL-bf
+		i.fas.fa-angle-right#js-arrR-bf
+
+mixin mob-arrows()
+	.arrows 
+		i.fas.fa-angle-left#js-arrL-mob
+		i.fas.fa-angle-right#js-arrR-mob
 
 //- before gallery list 
 mixin bfList()
-	.picture__list
-		-for(let i = 1; i< 5; i++)
+	.picture__list#js-bf-list
+		-for(let i = 4; i >= 1; i--)
 			.bf__pic
 				img(src=`/build/Assets/images/image-product-${i}-thumbnail.jpg` alt="product.jpg")
 		
@@ -22,7 +32,7 @@ main.main
 		.gallery__picture#js-gl__pic
 			img(src="/build/Assets/images/image-product-1.jpg", alt="product.jpg")
 			//- arrows
-			+arrows
+			+mob-arrows()
 
 		//- gallery pictures
 		+gallery
@@ -49,14 +59,14 @@ main.main
 
 //- this gallery will get after clicking thumbnail picture
 .before__gallery.display#js-bf__gl
-
 	.gallery__main
 		//-arrows 
-		+arrows
+		+bf-arrows()
 		.close 
-			i.fas.fa-times
-		.main__image
-			img(src="/build/Assets/images/image-product-1.jpg", alt="img.jpg")
+			i.fas.fa-times#js-close
+		.main__image#js-bf__con
+			.image__scroll#js-scroll
+				+bf-gallery()
 		+bfList()
 
 
